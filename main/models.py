@@ -17,8 +17,8 @@ class Task(models.Model):
     is_completed = models.BooleanField(default=False)
     
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks')
-    category = models.ForeignKey(Label, on_delete = models.SET_NULL, null=True, blank=True, related_name='category_tasks')
-    labels = models.ManyToManyField(Label, blank = True, related_name='label_tasks') #M:N relat 
+    category = models.ForeignKey(Label, on_delete=models.SET_NULL, null=True, blank=True, related_name='category_tasks')
+    labels = models.ManyToManyField(Label, blank = True, related_name='label_tasks') #M:N relationship
     def __str__(self):
         return self.title
     
